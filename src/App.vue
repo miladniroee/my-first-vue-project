@@ -1,26 +1,47 @@
 <template>
+  <NavBar :Title="name" />
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <NamesComp :Data="data"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue';
+import NamesComp from './components/NamesComp.vue';
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      data: [
+        {
+          name: "Milad",
+          age: 23
+        },
+        {
+          name: "Ali",
+          age: 19
+        },
+        {
+          name: "Yaser",
+          age: 30
+        },
+        {
+          name: "Gholi",
+          age: 42
+        }
+      ],
+      name: "Names"
+    }
+  },
   components: {
-    HelloWorld
-  }
+    NavBar,
+    NamesComp
+}
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+img {
+  display: block;
+  margin: auto
 }
 </style>
