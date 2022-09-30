@@ -1,7 +1,11 @@
 <template>
   <NavBar :Title="name" />
   <img alt="Vue logo" src="./assets/logo.png">
-  <NamesComp :Data="data"/>
+  <NamesComp :Data="data">
+  <template v-slot:ali>
+    <p> My name is Milad</p>
+  </template>
+  </NamesComp>
 </template>
 
 <script>
