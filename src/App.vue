@@ -11,10 +11,10 @@
 <script>
 import NavBar from './components/NavBar.vue';
 import NamesComp from './components/NamesComp.vue';
-
+import {ref,reactive} from "vue";
 export default {
   setup(){
-    let data = [
+    let data = reactive([
         {
           name: "Milad",
           age: 23
@@ -31,8 +31,8 @@ export default {
           name: "Gholi",
           age: 42
         }
-      ];
-      let name = "Names";
+      ]);
+      let name = ref("Names");
       return {name,data}
   },
 
