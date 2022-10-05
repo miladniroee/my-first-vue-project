@@ -13,9 +13,8 @@ import NavBar from './components/NavBar.vue';
 import NamesComp from './components/NamesComp.vue';
 
 export default {
-  data() {
-    return {
-      data: [
+  setup(){
+    let data = [
         {
           name: "Milad",
           age: 23
@@ -32,10 +31,11 @@ export default {
           name: "Gholi",
           age: 42
         }
-      ],
-      name: "Names"
-    }
+      ];
+      let name = "Names";
+      return {name,data}
   },
+
   components: {
     NavBar,
     NamesComp
