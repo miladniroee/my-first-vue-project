@@ -33,7 +33,7 @@ export default {
       }
     ]);
     let name = ref("Names");
-    provide('name',name)
+    provide('name', name)
     return { name, data }
   },
 
