@@ -2,44 +2,45 @@
   <NavBar :Title="name" />
   <img alt="Vue logo" src="./assets/logo.png">
   <NamesComp :Data="data">
-  <template v-slot:ali>
-    <p> My name is Milad</p>
-  </template>
+    <template v-slot:ali>
+      <p> My name is Milad</p>
+    </template>
   </NamesComp>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
 import NamesComp from './components/NamesComp.vue';
-import {ref,reactive} from "vue";
+import { ref, reactive, provide } from "vue";
 export default {
-  setup(){
+  setup() {
     let data = reactive([
-        {
-          name: "Milad",
-          age: 23
-        },
-        {
-          name: "Ali",
-          age: 19
-        },
-        {
-          name: "Yaser",
-          age: 30
-        },
-        {
-          name: "Gholi",
-          age: 42
-        }
-      ]);
-      let name = ref("Names");
-      return {name,data}
+      {
+        name: "Milad",
+        age: 23
+      },
+      {
+        name: "Ali",
+        age: 19
+      },
+      {
+        name: "Yaser",
+        age: 30
+      },
+      {
+        name: "Gholi",
+        age: 42
+      }
+    ]);
+    let name = ref("Names");
+    provide('name',name)
+    return { name, data }
   },
 
   components: {
     NavBar,
     NamesComp
-}
+  }
 }
 </script>
 

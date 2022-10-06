@@ -19,7 +19,7 @@
               Dropdown
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">{{name}}</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -37,8 +37,14 @@
 </template>
 
 <script>
+import { inject } from '@vue/runtime-core'
 export default {
- props:['Title']
+ props:['Title'],
+ setup(){
+  const name = inject('name')
+
+  return { name}
+ }
 }
 </script>
 
