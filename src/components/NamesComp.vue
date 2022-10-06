@@ -6,11 +6,14 @@
 </template>
 
 <script>
+import { inject } from '@vue/runtime-core'
     
 export default {
-    props:{
-        Data: Array,
-    },
+  setup(){
+    const Data = inject('Data')
+
+    return { Data }
+  }
 }
 </script>
 

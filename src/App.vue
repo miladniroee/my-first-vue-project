@@ -1,16 +1,12 @@
 <template>
-  <NavBar :Title="name" />
   <img alt="Vue logo" src="./assets/logo.png">
-  <NamesComp :Data="data">
-    <template v-slot:ali>
-      <p> My name is Milad</p>
-    </template>
-  </NamesComp>
+  <router-link to="/">Go to Home</router-link>
+  <router-link to="/app">Go to About</router-link>
+  <router-view></router-view>
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue';
-import NamesComp from './components/NamesComp.vue';
+
 import { ref, reactive, provide } from "vue";
 export default {
   setup() {
@@ -33,14 +29,11 @@ export default {
       }
     ]);
     let name = ref("Names");
-    provide('name', name)
+    provide('Data', data)
     return { name, data }
   },
 
-  components: {
-    NavBar,
-    NamesComp
-  }
+
 }
 </script>
 
