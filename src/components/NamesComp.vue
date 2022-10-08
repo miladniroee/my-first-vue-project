@@ -9,6 +9,7 @@
 <script>
 import { inject } from '@vue/runtime-core'
     import { useRoute } from 'vue-router'
+    
 export default {
   setup(){
     const Data = inject('Data')
