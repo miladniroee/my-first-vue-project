@@ -22,3 +22,5 @@ npm run lint
 
 ### Customize configuration
 This repo will be update by time for vue and nuxt js
+
+This is a test commit
